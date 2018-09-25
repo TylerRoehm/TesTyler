@@ -86,6 +86,16 @@ button:hover
     width: 0%;
     height: 30%;
     margin: auto;border-left: 5px solid white; height: 100%;}
+.v3
+{position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 80%;
+    right: 0;
+    width: 0%;
+    height: 30%;
+    margin: auto;
+}
 
 input[type="text"]
 {
