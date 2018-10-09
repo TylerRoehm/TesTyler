@@ -1,56 +1,45 @@
 body 
-{ text-align:absolute; height: 100%; background-image: linear-gradient(green, blue); background-repeat:no-repeat; background-size:100% 100vh;overflow:hidden;width:100%;}
+{ text-align:center; height: 100%;background-image: url("Improved.png");overflow:hidden;width:100%; color: white;}
+h1{
+  color: white;
+  font-family: courier;
+}
+.rectangle{
+ position: absolute;
+ left: 50%; 
+ top: 50%; 
+ margin-top: -250px; 
+ margin-left: -200px; 
+ height: 450px;
+ width: 250px;
+ background-color:#555; 
+ border-left: solid 70px transparent; 
+ border-right: solid 70px transparent; 
+ border-bottom: solid 40px transparent; 
+ filter: drop-shadow(0 0 20px #333);
+ opacity: 0.9;
+}
+.div
 
-.img1
-{position: absolute;
-    width: 20%;
-    animation-name: moveBox;
-    animation-duration: 9s;
-    animation-timing-function:linear;
-    animation-iteration-count: infinite;
-}
-.img2
-{position: absolute;
-    top: -30%;
-    width: 20%;
-    animation-name: moveBox;
-    animation-delay: 1.5s;
-    animation-duration: 9s;
-    animation-timing-function:linear;
-    animation-iteration-count: infinite;
-}
-.img3
-{position: absolute;
-    top: -20%;
-    width: 20%;
-    animation-name: moveBox;
-    animation-delay: 2.32s;
-    animation-duration: 9s;
-    animation-timing-function:linear;
-    animation-iteration-count: infinite;
-}
-.img4
-{position: absolute;
-    top: -20%;
-    width: 20%;
-    animation-name: moveBox;
-    animation-delay: 3.2s;
-    animation-duration: 9s;
-    animation-timing-function:linear;
-    animation-iteration-count: infinite;
-}
+div.absolute {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 0;
 
-.types {
-  display: none
-}
 
 button
 {
-    background-color: Gray;
+    position: absolute;
+    left: 0;
+    right:0%;
+    background-color: White;
     border: none;
-    color: white;
+    color: Black;
     padding: 15px 32px;
-    text-align: 50%;
+    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
@@ -67,50 +56,26 @@ button:hover
     background-color: DarkGray;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-
-.v1
-{position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 60%;
-    width: 0%;
-    height: 30%;
-    margin: auto;border-left: 5px solid white; height: 100%;}
-.v2
-{position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 60%;
-    right: 0;
-    width: 0%;
-    height: 30%;
-    margin: auto;border-left: 5px solid white; height: 100%;}
-.v3
-{position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 80%;
-    right: 0;
-    width: 0%;
-    height: 30%;
-    margin: auto;
-}
-
 input[type="text"]
 {
+    position: absolute;
+    left: 0;
+    right: 0%;
     background: none;
     border: 0;
-    border-bottom: 1px solid yellow;
+    border-bottom: 1px solid black;
     outline: 0;
+    color="white";
 }
 input[type="text"]:active
 {
-
+    color="white";
 }
-
 select
 {
+    position: absolute;
+    left: 0;
+    right: 0%;
     background: none;
     border: 0;
     border-bottom: 1px solid black;
@@ -118,37 +83,18 @@ select
 }
 option
 {
-    background-color: magenta;
+    background-color: White;
 }
-
 ::placeholder 
 {
     color: black;
     opacity: 1;
 }
-
 :-ms-input-placeholder 
 {
     color: black;
 }
-
 ::-ms-input-placeholder 
 { 
     color: black;
-}
-
-@keyframes moveBox
-{
-	0% {left:0;top:-20%;}
-	99.7% {left:0;top:100%;}
-	99.8% {left:-30%;top:100%;}
-	99.9% {left:-30%;top:-20%;}
-	100% {left:0; top:-20%;}
-}
-
-@media screen and (max-width:800px)
-{
-	.img1, .img2, .img3, .img4, .v1, .v2{
-	display:none;
-	}
 }
