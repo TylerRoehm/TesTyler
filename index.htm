@@ -2,61 +2,86 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
-  
-  <script src="jquery.js"></script>
-  <img class="img1" src="Cooper_Band.jpg">
-  <img class="img2" src="Cooper_Football.jpg">
-  <img class="img3" src="Cooper_Freshmen.jpg">
-  <img class="img4" src="Cooper_Catch.jpg">
-  <table style="width:100%;">
-    <tr>
-      <th><div class="v1"></div></th>
-      <th>
-          <form action="/action_page.php">
-            <input type="text" name="firstname" placeholder="First name" autocomplete="off" required>
-            <br><br>
-            <input type="text" name="lastname" placeholder="Last name" autocomplete="off" required>
-            <br><br>
-            Grade:<br>
-            <select name="Grade" required>
-	      <option value="" selected="selected"></option>
-              <option value="9th">Freshman</option>
-              <option value="10th">Sophmore</option>
-              <option value="11th">Junior</option>
-              <option value="12th">Senior</option>
-            </select>
-	          <br><br>
-              Reason:<br>
+ <div class="absolute">
+	<div class="rectangle">
+	      <th><div class="v1"></div></th>
+ 	     <th>
+   	       <form action="/action_page.php">
+                 <h1 style=" font-size:30px">Cooper Guidance</h1>
+        	    <input type="text" name="firstname" placeholder="First name" autocomplete="off" required>
+           	 <br><br>
+          	  <input type="text" name="lastname" placeholder="Last name" autocomplete="off" required>
+         	   <br><br>
+   
+         	   Grade:<br>
+     
+        	    <select name="Grade" required>
+		      <option value="" selected="selected">Select</option>
+        	      <option value="9th">Freshman</option>
+         	      <option value="10th">Sophmore</option>
+         	      <option value="11th">Junior</option>
+         	      <option value="12th">Senior</option>
+         	   </select>
+	 	         <br><br>
+        
+        	      Reason:<br>
 	      
-              <select class="medium" id="elementreg" name="reason" required>
-                <option value="" selected="selected"></option>
-                <option value="academic">Academic</option>
-                <option value="college">College</option>
-                <option value="scheduling">Scheduling</option>
-                <option value="other">Other</option>
-             </select>
+            	  <select class="medium" id="elementreg" name="reason" required>
+           	        <option value="" selected="selected">Select</option>
+          	        <option value="academic">Academic</option>
+         	        <option value="college">College</option>
+        	        <option value="scheduling">Scheduling</option>
+        	        <option value="other">Other</option>
+       		      </select>
 
-             <div class="types" id="other">
-	      <br>
-              <input type="text" name="otherReason" placeholder="Reason" autocomplete="off">
-	     </div>
-           <br><br>
-          <button>Submit</button>
-         <th><dive class=v3></div></th>
-        </form>
-      </th>
-      <th><div class="v2"></div></th>
-    </tr>
-  </table>
+      		       <div class="types" id="other">
+		      <br>
+          	    <input type="text" name="otherReason" placeholder="Reason" autocomplete="off">
+	  	   </div>
+        	   <br><br>
+        	  <button>Submit</button>
+		<br><br>
+               <a href="https://www.boone.k12.ky.us/5/Home" target="_blank" >
+		  <img src="CoopJag.png" alt="Cooper High School" width="115" height="75" border="0">
 
+       	 </form>
+    	  </th>
+   	   <th><div class="v2"></div></th>
+  	  </tr>
+	</div>
+</div>
 <script>
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+
 $("#elementreg").on("change", function() {
   var val = $(this).val();
   $(".types").hide().find('input:text').val(''); // hide and empty
@@ -64,6 +89,13 @@ $("#elementreg").on("change", function() {
 });
 </script>
 <script>
+
+function process(){
+   var color=document.getElementById("color").value;
+   document.body.style.backgroundColor=color;
+}
+
+
 var x, i, j, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
@@ -136,6 +168,10 @@ function closeAllSelect(elmnt) {
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
+
+
+
+
 </script>
 </body>
 </html>
